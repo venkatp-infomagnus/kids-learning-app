@@ -1,0 +1,157 @@
+<h1>Learn Colors</h1>
+
+<div class="learning-item">
+    <p>Colors are all around us! Let's learn about different colors and their names.</p>
+</div>
+
+<div class="learning-grid">
+    <% 
+        const colors = [
+            { name: 'Red', hex: '#FF0000' },
+            { name: 'Blue', hex: '#0000FF' },
+            { name: 'Green', hex: '#00FF00' },
+            { name: 'Yellow', hex: '#FFFF00' },
+            { name: 'Orange', hex: '#FFA500' },
+            { name: 'Purple', hex: '#800080' },
+            { name: 'Pink', hex: '#FFC0CB' },
+            { name: 'Brown', hex: '#A52A2A' },
+            { name: 'Black', hex: '#000000' },
+            { name: 'White', hex: '#FFFFFF' }
+        ];
+    %>
+    
+    <% colors.forEach(color => { 
+        const textColor = color.name === 'White' ? '#000000' : '#FFFFFF';
+    %>
+        <div class="interactive-element" 
+             data-audio="/audio/colors/<%= color.name.toLowerCase() %>.mp3"
+             style="background-color: <%= color.hex %>; color: <%= textColor %>;">
+            <h3><%= color.name %></h3>
+        </div>
+    <% }) %>
+</div>
+
+<div class="learning-item">
+    <h2>Color Mixing Magic</h2>
+    <p>Let's see what happens when we mix different colors together!</p>
+    
+    <div class="color-mixer">
+        <div class="mixer-container">
+            <div class="color-selector">
+                <label>Color 1:</label>
+                <select id="color1">
+                    <option value="#FF0000">Red</option>
+                    <option value="#0000FF">Blue</option>
+                    <option value="#FFFF00">Yellow</option>
+                </select>
+            </div>
+            
+            <div class="color-selector">
+                <label>Color 2:</label>
+                <select id="color2">
+                    <option value="#FF0000">Red</option>
+                    <option value="#0000FF" selected>Blue</option>
+                    <option value="#FFFF00">Yellow</option>
+                </select>
+            </div>
+            
+            <div class="mix-button">
+                <button id="mixColors" class="btn">Mix Colors</button>
+            </div>
+            
+            <div class="color-result">
+                <div class="color-box color1"></div>
+                <div class="plus">+</div>
+                <div class="color-box color2"></div>
+                <div class="equals">=</div>
+                <div class="color-box result"></div>
+            </div>
+            
+            <div class="result-text">
+                <p>Try mixing different colors!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="learning-item">
+    <h2>Colors in Our World</h2>
+    <p>Let's find different colors in everyday objects!</p>
+    
+    <div class="color-matching">
+        <div class="object-grid">
+            <div class="object-item" data-color="red">
+                <img src="https://via.placeholder.com/100?text=Apple" alt="Apple">
+                <p>Apple</p>
+            </div>
+            
+            <div class="object-item" data-color="yellow">
+                <img src="https://via.placeholder.com/100?text=Banana" alt="Banana">
+                <p>Banana</p>
+            </div>
+            
+            <div class="object-item" data-color="orange">
+                <img src="https://via.placeholder.com/100?text=Orange" alt="Orange">
+                <p>Orange</p>
+            </div>
+            
+            <div class="object-item" data-color="green">
+                <img src="https://via.placeholder.com/100?text=Leaf" alt="Leaf">
+                <p>Leaf</p>
+            </div>
+            
+            <div class="object-item" data-color="blue">
+                <img src="https://via.placeholder.com/100?text=Sky" alt="Sky">
+                <p>Sky</p>
+            </div>
+            
+            <div class="object-item" data-color="purple">
+                <img src="https://via.placeholder.com/100?text=Grapes" alt="Grapes">
+                <p>Grapes</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="quiz-container">
+    <h2>Colors Quiz</h2>
+    <p>Test your knowledge of colors!</p>
+    
+    <form class="quiz-form">
+        <div class="quiz-question" data-correct="red">
+            <p>What color is an apple usually?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="red"> Red</label>
+                <label><input type="radio" name="q1" value="green"> Green</label>
+                <label><input type="radio" name="q1" value="blue"> Blue</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-correct="blue">
+            <p>What color is the sky on a clear day?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="green"> Green</label>
+                <label><input type="radio" name="q2" value="blue"> Blue</label>
+                <label><input type="radio" name="q2" value="purple"> Purple</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-correct="orange">
+            <p>What color do you get when you mix red and yellow?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="purple"> Purple</label>
+                <label><input type="radio" name="q3" value="green"> Green</label>
+                <label><input type="radio" name="q3" value="orange"> Orange</label>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn">Check Answers</button>
+        
+        <div class="quiz-result"></div>
+    </form>
+</div>
+
+<div class="navigation-buttons">
+    <a href="/numbers" class="btn">← Learn Numbers</a>
+    <a href="/shapes" class="btn">Learn Shapes →</a>
+</div>

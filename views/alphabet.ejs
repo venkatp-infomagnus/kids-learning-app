@@ -1,0 +1,92 @@
+<h1>Learn the Alphabet</h1>
+
+<div class="learning-item">
+    <p>The alphabet has 26 letters from A to Z. Click on each letter to hear its sound!</p>
+</div>
+
+<div class="learning-grid">
+    <% for(let i = 65; i <= 90; i++) { %>
+        <div class="interactive-element" data-audio="/audio/letters/<%= String.fromCharCode(i).toLowerCase() %>.mp3">
+            <h2><%= String.fromCharCode(i) %></h2>
+            <p><%= String.fromCharCode(i).toLowerCase() %></p>
+        </div>
+    <% } %>
+</div>
+
+<div class="learning-item">
+    <h2>Alphabet Song</h2>
+    <p>Learn the alphabet with this fun song!</p>
+    <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Alphabet Song" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+<div class="learning-item">
+    <h2>Letter Matching Game</h2>
+    <p>Match uppercase letters with their lowercase pairs!</p>
+    
+    <div class="matching-game">
+        <div class="draggable-container">
+            <% const letters = ['A', 'B', 'C', 'D', 'E']; %>
+            <% const shuffledLetters = [...letters].sort(() => Math.random() - 0.5); %>
+            
+            <% shuffledLetters.forEach(letter => { %>
+                <div class="draggable" draggable="true" data-value="<%= letter %>"><%= letter %></div>
+            <% }); %>
+        </div>
+        
+        <div class="drop-container">
+            <% letters.forEach(letter => { %>
+                <div class="drop-target" data-value="<%= letter %>">?</div>
+            <% }); %>
+        </div>
+        
+        <div class="matching-result">
+            <p>Great job! You matched all the letters correctly!</p>
+            <a href="/alphabet" class="btn">Play Again</a>
+        </div>
+    </div>
+</div>
+
+<div class="quiz-container">
+    <h2>Alphabet Quiz</h2>
+    <p>Test your knowledge of the alphabet!</p>
+    
+    <form class="quiz-form">
+        <div class="quiz-question" data-correct="A">
+            <p>Which letter comes first in the alphabet?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="A"> A</label>
+                <label><input type="radio" name="q1" value="B"> B</label>
+                <label><input type="radio" name="q1" value="C"> C</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-correct="Z">
+            <p>Which letter comes last in the alphabet?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="X"> X</label>
+                <label><input type="radio" name="q2" value="Y"> Y</label>
+                <label><input type="radio" name="q2" value="Z"> Z</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-correct="5">
+            <p>How many vowels are there in the English alphabet?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="3"> 3</label>
+                <label><input type="radio" name="q3" value="5"> 5</label>
+                <label><input type="radio" name="q3" value="7"> 7</label>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn">Check Answers</button>
+        
+        <div class="quiz-result"></div>
+    </form>
+</div>
+
+<div class="navigation-buttons">
+    <a href="/" class="btn">Back to Home</a>
+    <a href="/numbers" class="btn">Learn Numbers →</a>
+</div>

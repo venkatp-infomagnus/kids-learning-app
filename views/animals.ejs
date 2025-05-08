@@ -1,0 +1,140 @@
+<h1>Learn Animals</h1>
+
+<div class="learning-item">
+    <p>Animals are amazing creatures that live all around us. Let's learn about different types of animals!</p>
+</div>
+
+<div class="learning-grid">
+    <% 
+        const animals = [
+            { name: 'Lion', emoji: '🦁', sound: 'roar' },
+            { name: 'Elephant', emoji: '🐘', sound: 'trumpet' },
+            { name: 'Monkey', emoji: '🐒', sound: 'chatter' },
+            { name: 'Dog', emoji: '🐕', sound: 'bark' },
+            { name: 'Cat', emoji: '🐈', sound: 'meow' },
+            { name: 'Cow', emoji: '🐄', sound: 'moo' },
+            { name: 'Horse', emoji: '🐎', sound: 'neigh' },
+            { name: 'Sheep', emoji: '🐑', sound: 'baa' },
+            { name: 'Chicken', emoji: '🐔', sound: 'cluck' },
+            { name: 'Duck', emoji: '🦆', sound: 'quack' },
+            { name: 'Frog', emoji: '🐸', sound: 'ribbit' },
+            { name: 'Fish', emoji: '🐠', sound: 'bubble' }
+        ];
+    %>
+    
+    <% animals.forEach(animal => { %>
+        <div class="interactive-element" data-audio="/audio/animals/<%= animal.name.toLowerCase() %>.mp3">
+            <div class="animal-icon"><%= animal.emoji %></div>
+            <h3><%= animal.name %></h3>
+            <p><%= animal.sound %></p>
+        </div>
+    <% }) %>
+</div>
+
+<div class="learning-item">
+    <h2>Animal Habitats</h2>
+    <p>Animals live in different places called habitats. Let's learn where different animals live!</p>
+    
+    <div class="habitat-container">
+        <div class="habitat">
+            <h3>Forest</h3>
+            <div class="habitat-image">
+                <img src="https://via.placeholder.com/300x200?text=Forest" alt="Forest">
+            </div>
+            <div class="habitat-animals">
+                <span class="animal-tag">Bear 🐻</span>
+                <span class="animal-tag">Deer 🦌</span>
+                <span class="animal-tag">Fox 🦊</span>
+                <span class="animal-tag">Owl 🦉</span>
+            </div>
+        </div>
+        
+        <div class="habitat">
+            <h3>Ocean</h3>
+            <div class="habitat-image">
+                <img src="https://via.placeholder.com/300x200?text=Ocean" alt="Ocean">
+            </div>
+            <div class="habitat-animals">
+                <span class="animal-tag">Fish 🐠</span>
+                <span class="animal-tag">Whale 🐋</span>
+                <span class="animal-tag">Dolphin 🐬</span>
+                <span class="animal-tag">Octopus 🐙</span>
+            </div>
+        </div>
+        
+        <div class="habitat">
+            <h3>Farm</h3>
+            <div class="habitat-image">
+                <img src="https://via.placeholder.com/300x200?text=Farm" alt="Farm">
+            </div>
+            <div class="habitat-animals">
+                <span class="animal-tag">Cow 🐄</span>
+                <span class="animal-tag">Pig 🐖</span>
+                <span class="animal-tag">Chicken 🐔</span>
+                <span class="animal-tag">Horse 🐎</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="learning-item">
+    <h2>Animal Sound Game</h2>
+    <p>Can you match the animal to its sound?</p>
+    
+    <div class="sound-game">
+        <div class="game-round">
+            <button class="sound-button" data-sound="bark">Play Sound</button>
+            <p>Which animal makes this sound?</p>
+            <div class="animal-options">
+                <button class="animal-option" data-animal="cat">Cat 🐈</button>
+                <button class="animal-option" data-animal="dog">Dog 🐕</button>
+                <button class="animal-option" data-animal="cow">Cow 🐄</button>
+            </div>
+            <div class="feedback"></div>
+            <button class="btn next-sound" style="display: none;">Next Sound</button>
+        </div>
+    </div>
+</div>
+
+<div class="quiz-container">
+    <h2>Animals Quiz</h2>
+    <p>Test your knowledge about animals!</p>
+    
+    <form class="quiz-form">
+        <div class="quiz-question" data-correct="elephant">
+            <p>Which is the largest land animal?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="lion"> Lion</label>
+                <label><input type="radio" name="q1" value="elephant"> Elephant</label>
+                <label><input type="radio" name="q1" value="giraffe"> Giraffe</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-correct="ocean">
+            <p>Where do fish live?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="forest"> Forest</label>
+                <label><input type="radio" name="q2" value="ocean"> Ocean</label>
+                <label><input type="radio" name="q2" value="desert"> Desert</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-correct="meow">
+            <p>What sound does a cat make?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="bark"> Bark</label>
+                <label><input type="radio" name="q3" value="meow"> Meow</label>
+                <label><input type="radio" name="q3" value="moo"> Moo</label>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn">Check Answers</button>
+        
+        <div class="quiz-result"></div>
+    </form>
+</div>
+
+<div class="navigation-buttons">
+    <a href="/shapes" class="btn">← Learn Shapes</a>
+    <a href="/" class="btn">Back to Home</a>
+</div>

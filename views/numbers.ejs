@@ -1,0 +1,142 @@
+<h1>Learn Numbers</h1>
+
+<div class="learning-item">
+    <p>Let's learn about numbers from 1 to 10. Click on each number to hear it!</p>
+</div>
+
+<div class="learning-grid">
+    <% for(let i = 1; i <= 10; i++) { %>
+        <div class="interactive-element" data-audio="/audio/numbers/<%= i %>.mp3">
+            <h2><%= i %></h2>
+            <% 
+                let numberWord;
+                switch(i) {
+                    case 1: numberWord = "One"; break;
+                    case 2: numberWord = "Two"; break;
+                    case 3: numberWord = "Three"; break;
+                    case 4: numberWord = "Four"; break;
+                    case 5: numberWord = "Five"; break;
+                    case 6: numberWord = "Six"; break;
+                    case 7: numberWord = "Seven"; break;
+                    case 8: numberWord = "Eight"; break;
+                    case 9: numberWord = "Nine"; break;
+                    case 10: numberWord = "Ten"; break;
+                }
+            %>
+            <p><%= numberWord %></p>
+        </div>
+    <% } %>
+</div>
+
+<div class="learning-item">
+    <h2>Counting Game</h2>
+    <p>Count the objects and select the correct number!</p>
+    
+    <div class="counting-game">
+        <div class="game-round" data-correct="3">
+            <div class="objects-container">
+                <img src="https://via.placeholder.com/50?text=Apple" alt="Apple">
+                <img src="https://via.placeholder.com/50?text=Apple" alt="Apple">
+                <img src="https://via.placeholder.com/50?text=Apple" alt="Apple">
+            </div>
+            <p>How many apples do you see?</p>
+            <div class="options">
+                <button class="number-option">2</button>
+                <button class="number-option">3</button>
+                <button class="number-option">4</button>
+            </div>
+            <div class="feedback"></div>
+        </div>
+        
+        <div class="game-round" data-correct="5">
+            <div class="objects-container">
+                <img src="https://via.placeholder.com/50?text=Star" alt="Star">
+                <img src="https://via.placeholder.com/50?text=Star" alt="Star">
+                <img src="https://via.placeholder.com/50?text=Star" alt="Star">
+                <img src="https://via.placeholder.com/50?text=Star" alt="Star">
+                <img src="https://via.placeholder.com/50?text=Star" alt="Star">
+            </div>
+            <p>How many stars do you see?</p>
+            <div class="options">
+                <button class="number-option">4</button>
+                <button class="number-option">5</button>
+                <button class="number-option">6</button>
+            </div>
+            <div class="feedback"></div>
+        </div>
+    </div>
+</div>
+
+<div class="learning-item">
+    <h2>Number Matching</h2>
+    <p>Match the number with the correct number of objects!</p>
+    
+    <div class="matching-game">
+        <div class="draggable-container">
+            <% const numbers = [1, 2, 3, 4, 5]; %>
+            <% const shuffledNums = [...numbers].sort(() => Math.random() - 0.5); %>
+            
+            <% shuffledNums.forEach(num => { %>
+                <div class="draggable" draggable="true" data-value="<%= num %>"><%= num %></div>
+            <% }); %>
+        </div>
+        
+        <div class="drop-container">
+            <% numbers.forEach(num => { %>
+                <div class="drop-target" data-value="<%= num %>">
+                    <% for(let i = 0; i < num; i++) { %>
+                        <span class="dot"></span>
+                    <% } %>
+                </div>
+            <% }); %>
+        </div>
+        
+        <div class="matching-result">
+            <p>Excellent! You matched all the numbers correctly!</p>
+            <a href="/numbers" class="btn">Play Again</a>
+        </div>
+    </div>
+</div>
+
+<div class="quiz-container">
+    <h2>Numbers Quiz</h2>
+    <p>Test what you've learned about numbers!</p>
+    
+    <form class="quiz-form">
+        <div class="quiz-question" data-correct="10">
+            <p>What comes after 9?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="8"> 8</label>
+                <label><input type="radio" name="q1" value="9"> 9</label>
+                <label><input type="radio" name="q1" value="10"> 10</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-correct="1">
+            <p>What is the smallest number shown on this page?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="0"> 0</label>
+                <label><input type="radio" name="q2" value="1"> 1</label>
+                <label><input type="radio" name="q2" value="2"> 2</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-correct="6">
+            <p>What is 4 + 2?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="5"> 5</label>
+                <label><input type="radio" name="q3" value="6"> 6</label>
+                <label><input type="radio" name="q3" value="7"> 7</label>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn">Check Answers</button>
+        
+        <div class="quiz-result"></div>
+    </form>
+</div>
+
+<div class="navigation-buttons">
+    <a href="/alphabet" class="btn">← Learn Alphabet</a>
+    <a href="/colors" class="btn">Learn Colors →</a>
+</div>

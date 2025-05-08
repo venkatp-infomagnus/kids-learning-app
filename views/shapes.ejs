@@ -1,0 +1,156 @@
+<h1>Learn Shapes</h1>
+
+<div class="learning-item">
+    <p>Shapes are everywhere around us! Let's learn about different shapes and how to recognize them.</p>
+</div>
+
+<div class="learning-grid">
+    <% 
+        const shapes = [
+            { name: 'Circle', icon: '⭕' },
+            { name: 'Square', icon: '⬛' },
+            { name: 'Triangle', icon: '▲' },
+            { name: 'Rectangle', icon: '▬' },
+            { name: 'Diamond', icon: '♦' },
+            { name: 'Star', icon: '★' },
+            { name: 'Heart', icon: '❤' },
+            { name: 'Oval', icon: '⬭' },
+            { name: 'Pentagon', icon: '⬟' },
+            { name: 'Hexagon', icon: '⬢' }
+        ];
+    %>
+    
+    <% shapes.forEach(shape => { %>
+        <div class="interactive-element" data-audio="/audio/shapes/<%= shape.name.toLowerCase() %>.mp3">
+            <div class="shape-icon"><%= shape.icon %></div>
+            <h3><%= shape.name %></h3>
+        </div>
+    <% }) %>
+</div>
+
+<div class="learning-item">
+    <h2>Shapes in Real Life</h2>
+    <p>Let's learn about shapes we can find in everyday objects!</p>
+    
+    <div class="shape-examples">
+        <div class="example-grid">
+            <div class="example-item">
+                <img src="https://via.placeholder.com/150?text=Clock" alt="Clock">
+                <p>A clock is a <strong>circle</strong></p>
+            </div>
+            
+            <div class="example-item">
+                <img src="https://via.placeholder.com/150?text=Book" alt="Book">
+                <p>A book is a <strong>rectangle</strong></p>
+            </div>
+            
+            <div class="example-item">
+                <img src="https://via.placeholder.com/150?text=Pizza" alt="Pizza Slice">
+                <p>A pizza slice is a <strong>triangle</strong></p>
+            </div>
+            
+            <div class="example-item">
+                <img src="https://via.placeholder.com/150?text=Window" alt="Window">
+                <p>A window is a <strong>square</strong></p>
+            </div>
+            
+            <div class="example-item">
+                <img src="https://via.placeholder.com/150?text=Ball" alt="Ball">
+                <p>A ball is a <strong>sphere</strong> (3D circle)</p>
+            </div>
+            
+            <div class="example-item">
+                <img src="https://via.placeholder.com/150?text=Box" alt="Box">
+                <p>A box is a <strong>cube</strong> (3D square)</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="learning-item">
+    <h2>Shape Hunt Game</h2>
+    <p>Can you find all the shapes in this picture?</p>
+    
+    <div class="shape-hunt">
+        <div class="hunt-image">
+            <img src="https://via.placeholder.com/600x400?text=Shape+Hunt+Scene" alt="Shape Hunt Scene">
+            
+            <div class="shape-spot" style="top: 20%; left: 30%;" data-shape="circle">
+                <span class="spot-marker">?</span>
+            </div>
+            
+            <div class="shape-spot" style="top: 50%; left: 20%;" data-shape="square">
+                <span class="spot-marker">?</span>
+            </div>
+            
+            <div class="shape-spot" style="top: 70%; left: 60%;" data-shape="triangle">
+                <span class="spot-marker">?</span>
+            </div>
+            
+            <div class="shape-spot" style="top: 30%; left: 70%;" data-shape="rectangle">
+                <span class="spot-marker">?</span>
+            </div>
+            
+            <div class="shape-spot" style="top: 60%; left: 40%;" data-shape="star">
+                <span class="spot-marker">?</span>
+            </div>
+        </div>
+        
+        <div class="shape-buttons">
+            <button class="shape-button" data-shape="circle">Circle</button>
+            <button class="shape-button" data-shape="square">Square</button>
+            <button class="shape-button" data-shape="triangle">Triangle</button>
+            <button class="shape-button" data-shape="rectangle">Rectangle</button>
+            <button class="shape-button" data-shape="star">Star</button>
+            <button class="shape-button" data-shape="heart">Heart</button>
+        </div>
+        
+        <div class="hunt-result">
+            <p>Great job! You found all the shapes!</p>
+            <button class="btn reset-hunt">Play Again</button>
+        </div>
+    </div>
+</div>
+
+<div class="quiz-container">
+    <h2>Shapes Quiz</h2>
+    <p>Test your knowledge of shapes!</p>
+    
+    <form class="quiz-form">
+        <div class="quiz-question" data-correct="4">
+            <p>How many sides does a square have?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="3"> 3</label>
+                <label><input type="radio" name="q1" value="4"> 4</label>
+                <label><input type="radio" name="q1" value="5"> 5</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-correct="0">
+            <p>How many corners does a circle have?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="0"> 0</label>
+                <label><input type="radio" name="q2" value="1"> 1</label>
+                <label><input type="radio" name="q2" value="2"> 2</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-correct="3">
+            <p>How many sides does a triangle have?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="2"> 2</label>
+                <label><input type="radio" name="q3" value="3"> 3</label>
+                <label><input type="radio" name="q3" value="4"> 4</label>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn">Check Answers</button>
+        
+        <div class="quiz-result"></div>
+    </form>
+</div>
+
+<div class="navigation-buttons">
+    <a href="/colors" class="btn">← Learn Colors</a>
+    <a href="/animals" class="btn">Learn Animals →</a>
+</div>
