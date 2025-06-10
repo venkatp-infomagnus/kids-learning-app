@@ -51,6 +51,10 @@ app.get('/animals', (req, res) => {
   res.render('animals', { title: 'Learn Animals' });
 });
 
+app.get('/birds', (req, res) => {
+  res.render('birds', { title: 'Learn Birds' });
+});
+
 // Start the server with error handling for port already in use
 const startServer = (port) => {
   try {
