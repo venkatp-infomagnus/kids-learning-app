@@ -154,7 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 if ((sound === 'bark' && animal === 'dog') ||
                     (sound === 'meow' && animal === 'cat') ||
-                    (sound === 'moo' && animal === 'cow')) {
+                    (sound === 'moo' && animal === 'cow') ||
+                    (sound === 'hoot' && animal === 'owl')) {
                     // Correct match
                     feedback.innerHTML = '<p class="correct">Correct! That\'s right!</p>';
                     nextSound.style.display = 'block';
@@ -168,6 +169,32 @@ document.addEventListener('DOMContentLoaded', () => {
                     
                     // Play error sound
                     playSound(200, 0.3);
+                }
+            });
+        });
+    }
+    
+    // Bird characteristics game functionality
+    const characteristicsGame = document.querySelector('.characteristics-game');
+    if (characteristicsGame) {
+        const revealButtons = document.querySelectorAll('.reveal-btn');
+        
+        revealButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const characteristicDiv = button.nextElementSibling;
+                const characteristic = button.dataset.characteristic;
+                
+                if (characteristicDiv.style.display === 'none' || !characteristicDiv.style.display) {
+                    characteristicDiv.style.display = 'block';
+                    characteristicDiv.innerHTML = `<p>${characteristic}</p>`;
+                    button.textContent = 'Hide';
+                    
+                    // Play reveal sound
+                    playSound(600, 0.3);
+                    setTimeout(() => playSound(800, 0.3), 200);
+                } else {
+                    characteristicDiv.style.display = 'none';
+                    button.textContent = 'What\'s Special?';
                 }
             });
         });
