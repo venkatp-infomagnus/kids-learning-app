@@ -1,0 +1,140 @@
+<h1>Learn Birds</h1>
+
+<div class="learning-item">
+    <p>Birds are amazing creatures that can fly and sing beautiful songs. Let's learn about different types of birds!</p>
+</div>
+
+<div class="learning-grid">
+    <% 
+        const birds = [
+            { name: 'Eagle', emoji: '🦅', sound: 'screech' },
+            { name: 'Owl', emoji: '🦉', sound: 'hoot' },
+            { name: 'Robin', emoji: '🐦', sound: 'chirp' },
+            { name: 'Duck', emoji: '🦆', sound: 'quack' },
+            { name: 'Parrot', emoji: '🦜', sound: 'squawk' },
+            { name: 'Penguin', emoji: '🐧', sound: 'honk' },
+            { name: 'Chicken', emoji: '🐔', sound: 'cluck' },
+            { name: 'Turkey', emoji: '🦃', sound: 'gobble' },
+            { name: 'Peacock', emoji: '🦚', sound: 'call' },
+            { name: 'Swan', emoji: '🦢', sound: 'trumpet' },
+            { name: 'Flamingo', emoji: '🦩', sound: 'honk' },
+            { name: 'Crow', emoji: '🐦‍⬛', sound: 'caw' }
+        ];
+    %>
+    
+    <% birds.forEach(bird => { %>
+        <div class="interactive-element" data-audio="/audio/birds/<%= bird.name.toLowerCase() %>.mp3">
+            <div class="animal-icon"><%= bird.emoji %></div>
+            <h3><%= bird.name %></h3>
+            <p><%= bird.sound %></p>
+        </div>
+    <% }) %>
+</div>
+
+<div class="learning-item">
+    <h2>Bird Habitats</h2>
+    <p>Birds live in different places around the world. Let's learn where different birds make their homes!</p>
+    
+    <div class="habitat-container">
+        <div class="habitat">
+            <h3>Forest</h3>
+            <div class="habitat-image">
+                <img src="https://via.placeholder.com/300x200?text=Forest+Birds" alt="Forest Birds">
+            </div>
+            <div class="habitat-animals">
+                <span class="animal-tag">Owl 🦉</span>
+                <span class="animal-tag">Robin 🐦</span>
+                <span class="animal-tag">Woodpecker 🐦</span>
+                <span class="animal-tag">Eagle 🦅</span>
+            </div>
+        </div>
+        
+        <div class="habitat">
+            <h3>Water</h3>
+            <div class="habitat-image">
+                <img src="https://via.placeholder.com/300x200?text=Water+Birds" alt="Water Birds">
+            </div>
+            <div class="habitat-animals">
+                <span class="animal-tag">Duck 🦆</span>
+                <span class="animal-tag">Swan 🦢</span>
+                <span class="animal-tag">Flamingo 🦩</span>
+                <span class="animal-tag">Penguin 🐧</span>
+            </div>
+        </div>
+        
+        <div class="habitat">
+            <h3>Tropical</h3>
+            <div class="habitat-image">
+                <img src="https://via.placeholder.com/300x200?text=Tropical+Birds" alt="Tropical Birds">
+            </div>
+            <div class="habitat-animals">
+                <span class="animal-tag">Parrot 🦜</span>
+                <span class="animal-tag">Peacock 🦚</span>
+                <span class="animal-tag">Toucan 🦜</span>
+                <span class="animal-tag">Hummingbird 🐦</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="learning-item">
+    <h2>Bird Sound Game</h2>
+    <p>Can you match the bird to its sound?</p>
+    
+    <div class="sound-game">
+        <div class="game-round">
+            <button class="sound-button" data-sound="hoot">Play Sound</button>
+            <p>Which bird makes this sound?</p>
+            <div class="animal-options">
+                <button class="animal-option" data-animal="owl">Owl 🦉</button>
+                <button class="animal-option" data-animal="duck">Duck 🦆</button>
+                <button class="animal-option" data-animal="crow">Crow 🐦‍⬛</button>
+            </div>
+            <div class="feedback"></div>
+            <button class="btn next-sound" style="display: none;">Next Sound</button>
+        </div>
+    </div>
+</div>
+
+<div class="quiz-container">
+    <h2>Birds Quiz</h2>
+    <p>Test your knowledge about birds!</p>
+    
+    <form class="quiz-form">
+        <div class="quiz-question" data-correct="eagle">
+            <p>Which bird is known as a symbol of strength and freedom?</p>
+            <div class="options">
+                <label><input type="radio" name="q1" value="sparrow"> Sparrow</label>
+                <label><input type="radio" name="q1" value="eagle"> Eagle</label>
+                <label><input type="radio" name="q1" value="chicken"> Chicken</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-correct="water">
+            <p>Where do ducks usually live?</p>
+            <div class="options">
+                <label><input type="radio" name="q2" value="desert"> Desert</label>
+                <label><input type="radio" name="q2" value="water"> Water</label>
+                <label><input type="radio" name="q2" value="mountains"> Mountains</label>
+            </div>
+        </div>
+        
+        <div class="quiz-question" data-correct="hoot">
+            <p>What sound does an owl make?</p>
+            <div class="options">
+                <label><input type="radio" name="q3" value="quack"> Quack</label>
+                <label><input type="radio" name="q3" value="hoot"> Hoot</label>
+                <label><input type="radio" name="q3" value="chirp"> Chirp</label>
+            </div>
+        </div>
+        
+        <button type="submit" class="btn">Check Answers</button>
+        
+        <div class="quiz-result"></div>
+    </form>
+</div>
+
+<div class="navigation-buttons">
+    <a href="/animals" class="btn">← Learn Animals</a>
+    <a href="/" class="btn">Back to Home</a>
+</div>

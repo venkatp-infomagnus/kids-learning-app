@@ -9,6 +9,7 @@ An interactive Node.js web application designed to help children learn basic edu
 - **Colors Learning**: Interactive color display, color mixing experiment, and object-color association
 - **Shapes Learning**: Learn different shapes, find shapes in everyday objects, and play shape hunting games
 - **Animals Learning**: Learn about animals, their sounds, habitats, and characteristics through interactive activities
+- **Birds Learning**: Learn about birds, their sounds, habitats, and characteristics through interactive activities
 
 ## Technologies Used
 
@@ -67,6 +68,7 @@ kids-learning-app/
     ├── colors.ejs          # Colors learning page
     ├── shapes.ejs          # Shapes learning page
     ├── animals.ejs         # Animals learning page
+    ├── birds.ejs           # Birds learning page
     └── partials/           # Reusable template parts
         └── layout.ejs      # Main layout template
 ```
